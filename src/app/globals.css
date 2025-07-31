@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #000000;
@@ -14,7 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #6e5252;
+    --background: #800000;
     --foreground: #ededed;
   }
 }
@@ -35,4 +38,28 @@ body {
 
 .main-nav-link:hover {
   color: #E85A2E;
+}
+
+.grid-card {
+  /* Tente diminuir este valor. Comece com 290px e veja. */
+  width: 290px;
+
+  height: 280px;
+  border-radius: 20px;
+}
+
+/* Para telas de tablet e menores */
+@media (max-width: 1024px) {
+  .grid-card {
+    flex-basis: 45%;
+    /* Força o layout 2x2 */
+  }
+}
+
+/* Para telas de celular */
+@media (max-width: 640px) {
+  .grid-card {
+    flex-basis: 100%;
+    /* Força o layout de 1 coluna */
+  }
 }

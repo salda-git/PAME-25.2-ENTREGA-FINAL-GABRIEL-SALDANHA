@@ -50,7 +50,7 @@ export default function Sidebar() {
             {/* ícones na direita 👤❤️🏠*/}
 
             <div style={{ display: 'flex', flexDirection: 'row', }}>
-                <p style={{ margin: 0, color: '#aaa', display: "flex",gap: '2rem'  }}>
+                <p style={{ margin: 0, color: '#aaa', display: "flex", gap: '2rem' }}>
                     <Search color="#2C2C2C" size={24} style={{ cursor: 'pointer' }} />
                     <ShoppingCart color="#2C2C2C" size={24} style={{ cursor: 'pointer' }} />
                     <User color="#2C2C2C" size={24} style={{ cursor: 'pointer' }} />
