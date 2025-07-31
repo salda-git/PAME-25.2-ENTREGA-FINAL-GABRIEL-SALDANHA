@@ -11,17 +11,18 @@ export const metadata: Metadata = {
   description: "A melhor loja de pirulitos da web!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
       <body className={inter.className}>
         <FavoritesProvider>
-          <Header />
-          {children}
+          <Header /> {/* Nossa nova Sidebar */}
+
+          {/* Adicionamos um <main> para conter as páginas */}
+          <main className="ml-64">
+            {children}
+          </main>
+
         </FavoritesProvider>
       </body>
     </html>

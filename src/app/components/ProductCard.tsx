@@ -1,7 +1,6 @@
-// src/components/ProductCard.tsx
 "use client";
 
-import Link from "next/link"; // ERRO 4 CORRIGIDO: Importação do Link
+import Link from "next/link";
 import { Product } from "../data/products";
 import { useFavorites } from "../contexts/FavoritesContext";
 
@@ -11,32 +10,34 @@ const LollipopIcon = () => (
     </div>
 );
 
-// A prop { product } estava sendo passada de forma incorreta, corrigido para o padrão.
 export default function ProductCard({ product }: { product: Product }) {
     const { toggleFavorite, isFavorite } = useFavorites();
     const isCurrentlyFavorite = isFavorite(product.id);
 
-    // ERRO 1 CORRIGIDO: Usando parêntese () em vez de colchete []
     return (
-        // ERRO 2 e 3 CORRIGIDOS: Classes limpas, em minúsculo e com justify-between
         <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col justify-between">
 
-            {/* Parte clicável do card */}
-            <Link href={`/produtos/${product.id}`}>
-                {/* ERRO 2 CORRIGIDO: 'flex-grow' em minúsculo */}
-                <div className="flex-grow">
-                    <LollipopIcon />
-                    <h3 className="text-xl font-bold text-gray-800">{product.name}</h3>
-                    <p className="text-gray-500 mt-1">Sabor: {product.flavor}</p>
-                    <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
-                </div>
-            </Link>
+            <div className="flex-grow">
+                <LollipopIcon />
+                <h3 className="text-xl font-bold text-gray-800">{product.name}</h3>
+                <p className="text-gray-500 mt-1">Sabor: {product.flavor}</p>
+                <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
+            </div>
 
             {/* Parte de baixo com preço e botões */}
             <div className="mt-6">
                 <p className="text-2xl font-bold text-red-500 mb-4">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                 </p>
+                
+                {/* Botão ver mais */}
+                <Link
+                    href={`/produtos/${product.id}`}
+                    className="w-[50%] block text-center bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition-colors mb-2"
+                >
+                    Ver mais
+                </Link>
+
                 <div className="flex items-center gap-2">
                     <button
                         onClick={() => toggleFavorite(product)}
