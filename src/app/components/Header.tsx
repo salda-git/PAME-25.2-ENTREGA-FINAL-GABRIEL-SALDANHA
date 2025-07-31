@@ -1,13 +1,13 @@
 
 "use client";
 import Link from "next/link";
-import { useFavorites } from "../contexts/Favorites.Context";
+import { useFavorites } from "../contexts/FavoritesContext";
 
 export default function Header() {
     const { favorites } = useFavorites(); // Pega a lista de favoritos
 
     return (
-        <header className="bg-white shadow-sm">
+        <header className="bg- shadow-sm">
             <nav className="container mx-auto flex items-center justify-between x-4 py-4">
 
                 <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-pink-500">
