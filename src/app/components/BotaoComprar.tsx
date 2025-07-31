@@ -5,7 +5,7 @@ interface BotaoComprarProps {
 
 export default function BotaoComprar() {
     return (
-        <Link href={"/"} className="flex h-[10vh] w-[20vw]">
+        <Link href={"/"} className="flex h-[50%] w-[100%]">
             <button
                 className="
                 bg-black
