@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --cor-rosa-barra: #F7B3C1;
+    --cor-rosa-pirulito: #ff8fab;
+    --cor-rosa-escuro: #C25B71;
+    --cor-marrom-chocolate: #6E2C22;
+    --cor-verde-folha: #3E7844;
+    --cor-creme-fundo: #FAF3E0;
+}

@@ -9,7 +9,7 @@ export default function FavoritosPage() {
     const { favorites } = useFavorites();
 
     return (
-        <main className="bg-white min-h-screen">
+        <main >
             <div className="container mx-auto px-4 py-12">
                 <h1 className="mb-4 text-4xl font-bold text-gray-800">
                     Meus Favoritos

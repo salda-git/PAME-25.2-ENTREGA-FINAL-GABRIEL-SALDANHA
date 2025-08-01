@@ -1,21 +1,40 @@
 import ProductCard from "./components/ProductCard";
 import { products } from "./data/products";
+import { CheckCircle2 } from 'lucide-react';
 
 export default function Home() {
     return (
-        <div className="bg-gray-50 min-h-screen">
-            <div className="container mx-auto px-4 py-12">
-                <h1 className="text-4xl font-bold text-gray-800 mb-8">
-                    Nossos Pirulitos
-                </h1>
+        // Este é o ÚNICO container que controla o espaçamento geral da página
+        <div className="px-6 py-12 sm:px-8 md:px-16">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* card para cada produto*/}
-                    {products.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
+            {/* Barra de Qualidades */}
+            <div className="border border-gray-500 rounded-lg p-8 mb-10">
+                <ul className="flex flex-col items-start gap-4 md:flex-row md:justify-around md:items-center">
+                    <li className="flex items-center gap-2">
+                        <CheckCircle2 size={20} className="text-pink-500" />
+                        <span className="font-semibold text-slate-700">100% Artesanal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                        <CheckCircle2 size={20} className="text-pink-500" />
+                        <span className="font-semibold text-slate-700">Frutas e Ingredientes Reais</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                        <CheckCircle2 size={20} className="text-pink-500" />
+                        <span className="font-semibold text-slate-700">Sem Açúcar</span>
+                    </li>
+                </ul>
             </div>
+
+            <h1 className="text-5xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-red-500 mb-12">
+                Nossos Produtos
+            </h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
+
         </div>
     );
 }

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+// CORREÇÃO: Os caminhos devem sair da pasta 'app' com '../'
 import Header from "./components/Header";
-import { FavoritesProvider } from "./contexts/FavoritesContext";
+import { useFavorites } from "./contexts/FavoritesContext";
 import { AuthProvider } from "./context/AuthContext";
+import { FavoritesProvider } from "./contexts/FavoritesContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FavoritesProvider>
             <Header />
 
-            <main className="ml-64">
+            {/* A classe de cor deve corresponder ao nome definido no tailwind.config.ts */}
+            <main className="ml-64 min-h-screen bg-[var(--cor-creme-fundo)]">
               {children}
             </main>
 

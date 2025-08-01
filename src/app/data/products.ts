@@ -5,54 +5,47 @@ export type Product = {
   description: string;
   price: number;
   icon: string;
-  composition: string[]; 
-  nutritionalFacts: { [key: string]: string }; 
+  imageUrl: string;
+  cardColor: string; // <-- 1. ADICIONE ESTA LINHA
+  composition: string[];
+  nutritionalFacts: { [key: string]: string };
 };
 
 export const products: Product[] = [
   {
     id: 1,
-    name: "Pirulito Morango",
-    flavor: "Morango",
-    description: "Delicioso pirulito sabor morango",
+    name: "Pirulito Cereja",
+    flavor: "Cereja",
+    description: "Delicioso pirulito sabor Cereja",
     price: 2.50,
     icon: "🍓",
-    composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Artificial de Morango", "Corante Vermelho 40"],
-    nutritionalFacts: {
-      "Porção": "15g (1 unidade)",
-      "Calorias": "58 kcal",
-      "Carboidratos": "14g",
-      "Açúcares": "11g",
-    },
+    imageUrl: "/cherryDEF.jpg", // Verifique se o nome do seu arquivo é este
+    cardColor: 'bg-red-300', // <-- 2. ADICIONE A COR AQUI
+    composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Artificial de Cereja", "Corante Vermelho 40"],
+    nutritionalFacts: { /* ... */ },
   },
   {
     id: 2,
-    name: "Pirulito Chocolate",
-    flavor: "Chocolate",
-    description: "Pirulito cremoso de chocolate",
+    name: "Pirulito Blueberry",
+    flavor: "Blueberry",
+    description: "Pirulito cremoso de Blueberry",
     price: 3.00,
     icon: "🍫",
+    imageUrl: "/blueBerryDEF2.png", // Verifique se o nome do seu arquivo é este
+    cardColor: 'bg-blue-100', // <-- 2. ADICIONE A COR AQUI
     composition: ["Açúcar", "Massa de Cacau", "Manteiga de Cacau", "Leite em Pó", "Lecitina de Soja"],
-    nutritionalFacts: {
-      "Porção": "20g (1 unidade)",
-      "Calorias": "95 kcal",
-      "Gorduras Totais": "5g",
-      "Proteínas": "1g",
-    },
+    nutritionalFacts: { /* ... */ },
   },
   {
     id: 3,
-    name: "Pirulito Limão",
-    flavor: "Limão",
-    description: "Pirulito azedinho de limão",
+    name: "Pirulito Maçã Verde",
+    flavor: "Maçã Verde",
+    description: "Pirulito azedinho de Maçã Verde",
     price: 2.50,
     icon: "🍋",
-    composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Natural de Limão", "Corante Amarelo"],
-    nutritionalFacts: {
-      "Porção": "15g (1 unidade)",
-      "Calorias": "55 kcal",
-      "Carboidratos": "13g",
-      "Sódio": "3mg",
-    },
+    imageUrl: "/GreenAppleDEF2.png", // Verifique se o nome do seu arquivo é este
+    cardColor: 'bg-green-100', // <-- 2. ADICIONE A COR AQUI
+    composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Natural de Maçã Verde", "Corante Amarelo"],
+    nutritionalFacts: { /* ... */ },
   },
 ];

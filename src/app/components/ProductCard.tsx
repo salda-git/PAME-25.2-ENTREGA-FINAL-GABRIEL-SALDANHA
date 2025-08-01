@@ -1,49 +1,49 @@
+// src/components/ProductCard.tsx
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Product } from "../data/products";
 import { useFavorites } from "../contexts/FavoritesContext";
-
-const LollipopIcon = () => (
-    <div className="text-4xl bg-rose-100 p-3 rounded-full inline-block mb-4">
-        🍭
-    </div>
-);
 
 export default function ProductCard({ product }: { product: Product }) {
     const { toggleFavorite, isFavorite } = useFavorites();
     const isCurrentlyFavorite = isFavorite(product.id);
 
     return (
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col justify-between">
-
-            <div className="flex-grow">
-                <LollipopIcon />
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            
+            <div>
+                {/* AQUI ESTÁ A MUDANÇA PARA A COR DE FUNDO DINÂMICA */}
+                <div className={`relative w-full h-48 mb-4 rounded-lg overflow-hidden ${product.cardColor}`}>
+                    <Image
+                        src={product.imageUrl}
+                        alt={product.name}
+                        fill
+                        className="object-contain object-center"
+                    />
+                </div>
                 <h3 className="text-xl font-bold text-gray-800">{product.name}</h3>
                 <p className="text-gray-500 mt-1">Sabor: {product.flavor}</p>
                 <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
             </div>
 
-            {/* Parte de baixo com preço e botões */}
             <div className="mt-6">
                 <p className="text-2xl font-bold text-red-500 mb-4">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                 </p>
-                
-                {/* Botão ver mais */}
                 <Link
                     href={`/produtos/${product.id}`}
-                    className="w-[50%] block text-center bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition-colors mb-2"
+                    className="block w-full text-center bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition-colors mb-2"
                 >
                     Ver mais
                 </Link>
-
                 <div className="flex items-center gap-2">
                     <button
                         onClick={() => toggleFavorite(product)}
                         className={`flex-1 text-center py-2 px-4 rounded-md transition-colors ${isCurrentlyFavorite
-                            ? 'bg-pink-500 text-white hover:bg-pink-600'
-                            : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                ? 'bg-pink-500 text-white hover:bg-pink-600'
+                                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                             }`}
                     >
                         {isCurrentlyFavorite ? 'Favoritado ♥' : 'Favoritar'}
@@ -56,3 +56,4 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
     );
 }
+

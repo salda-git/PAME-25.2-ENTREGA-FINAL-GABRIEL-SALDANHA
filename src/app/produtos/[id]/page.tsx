@@ -3,6 +3,7 @@
 import { products } from "@/app/data/products";
 import { useFavorites } from "@/app/contexts/FavoritesContext";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -20,9 +21,17 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     return (
         <main className="container mx-auto px-4 py-12">
             <div className="grid md:grid-cols-2 gap-12 items-start">
-                {/* Coluna da Esquerda: Imagem */}
+
+                {/* ÁREA DA IMAGEM CORRIGIDA */}
                 <div className="bg-gray-100 p-8 rounded-lg flex items-center justify-center">
-                    <span className="text-9xl">{product.icon}</span>
+                    <div className="relative w-full h-80">
+                        <Image
+                            src={product.imageUrl}
+                            alt={product.name}
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                 </div>
 
                 {/* Coluna da Direita: Detalhes */}
