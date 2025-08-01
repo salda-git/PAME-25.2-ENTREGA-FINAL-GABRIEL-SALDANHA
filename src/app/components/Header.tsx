@@ -17,7 +17,6 @@ export default function Header() {
         router.push('/');
     };
 
-    // Funções para classes dinâmicas, deixando o JSX mais limpo
     const getLinkClasses = (path: string) => {
         const baseClasses = "flex items-center gap-3 p-3 rounded-lg transition-colors";
         const activeClasses = "bg-pink-100 text-pink-700 font-semibold";
@@ -29,14 +28,13 @@ export default function Header() {
     return (
         <aside className="fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-200 shadow-lg flex flex-col">
 
-            {/* SEÇÃO DO LOGO */}
+            {/* LOGO */}
             <div className="px-4 pt-4 pb-4 border-b border-gray-200">
                 <Link href="/" className="flex justify-center">
                     <img src="/logo3.png" alt="Pirulito Shop Logo" className="h-10 w-auto" />
                 </Link>
             </div>
 
-            {/* NAVEGAÇÃO PRINCIPAL */}
             <div className="p-4 flex-grow">
                 <nav className="flex flex-col gap-2">
                     <Link href="/" className={getLinkClasses("/")}>

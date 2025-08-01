@@ -6,7 +6,7 @@ export type Product = {
   price: number;
   icon: string;
   imageUrl: string;
-  cardColor: string; // <-- 1. ADICIONE ESTA LINHA
+  cardColor: string;
   composition: string[];
   nutritionalFacts: { [key: string]: string };
 };
@@ -16,36 +16,84 @@ export const products: Product[] = [
     id: 1,
     name: "Pirulito Cereja",
     flavor: "Cereja",
-    description: "Delicioso pirulito sabor Cereja",
+    description: "Delicioso pirulito sabor cereja sem adição de açúcares",
     price: 2.50,
-    icon: "🍓",
-    imageUrl: "/cherryDEF.jpg", // Verifique se o nome do seu arquivo é este
-    cardColor: 'bg-red-300', // <-- 2. ADICIONE A COR AQUI
-    composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Artificial de Cereja", "Corante Vermelho 40"],
-    nutritionalFacts: { /* ... */ },
+    icon: "",
+    imageUrl: "/cherryDEF2.png",
+    cardColor: 'bg-red-100',
+
+    composition: [
+      "Dextrina (agente de volume)",
+      "Eritritol, Xilitol, Extrato de folha de estévia (edulcorantes)",
+      "Ácido cítrico (acidulante)",
+      "Ácido ascórbico (antioxidante)",
+      "Aromas naturais",
+      "Extrato de espirulina, Cúrcuma (corante)"
+    ],
+
+    nutritionalFacts: {
+      "Calorias": "30",
+      "Gordura Total": "0g",
+      "Gordura Saturada": "0g",
+      "Gordura Trans": "0g",
+      "Colesterol": "0mg",
+      "Sódio": "0mg",
+      "Carboidratos Totais": "15g",
+      "Fibra Alimentar": "8g",
+      "Açúcares Totais": "0g",
+      "Álcool de Açúcar": "5g",
+      "Proteína": "0g",
+      "Vitamina C": "120mg",
+    },
   },
   {
     id: 2,
     name: "Pirulito Blueberry",
     flavor: "Blueberry",
-    description: "Pirulito cremoso de Blueberry",
+    description: "Pirulito cremoso de Blueberry sem adição de açúcares",
     price: 3.00,
-    icon: "🍫",
-    imageUrl: "/blueBerryDEF2.png", // Verifique se o nome do seu arquivo é este
-    cardColor: 'bg-blue-100', // <-- 2. ADICIONE A COR AQUI
+    icon: "",
+    imageUrl: "/blueBerryDEF2.png",
+    cardColor: 'bg-blue-100',
     composition: ["Açúcar", "Massa de Cacau", "Manteiga de Cacau", "Leite em Pó", "Lecitina de Soja"],
-    nutritionalFacts: { /* ... */ },
+    nutritionalFacts: {
+      "Calorias": "30",
+      "Gordura Total": "0g",
+      "Gordura Saturada": "0g",
+      "Gordura Trans": "0g",
+      "Colesterol": "0mg",
+      "Sódio": "0mg",
+      "Carboidratos Totais": "15g",
+      "Fibra Alimentar": "8g",
+      "Açúcares Totais": "0g",
+      "Álcool de Açúcar": "5g",
+      "Proteína": "0g",
+      "Vitamina C": "120mg",
+    },
   },
   {
     id: 3,
     name: "Pirulito Maçã Verde",
     flavor: "Maçã Verde",
-    description: "Pirulito azedinho de Maçã Verde",
+    description: "Pirulito azedinho de Maçã Verde sem adição de açúcares",
     price: 2.50,
-    icon: "🍋",
-    imageUrl: "/GreenAppleDEF2.png", // Verifique se o nome do seu arquivo é este
-    cardColor: 'bg-green-100', // <-- 2. ADICIONE A COR AQUI
+    icon: "🍏",
+    imageUrl: "/GreenAppleDEF2.png",
+    cardColor: 'bg-green-100',
     composition: ["Açúcar", "Xarope de Glicose", "Ácido Cítrico", "Aroma Natural de Maçã Verde", "Corante Amarelo"],
-    nutritionalFacts: { /* ... */ },
+    nutritionalFacts: {
+      "Calorias": "30",
+      "Gordura Total": "0g",
+      "Gordura Saturada": "0g",
+      "Gordura Trans": "0g",
+      "Colesterol": "0mg",
+      "Sódio": "0mg",
+      "Carboidratos Totais": "15g",
+      "Fibra Alimentar": "8g",
+      "Açúcares Totais": "0g",
+      "Álcool de Açúcar": "5g",
+      "Proteína": "0g",
+      "Vitamina C": "120mg",
+    },
   },
 ];

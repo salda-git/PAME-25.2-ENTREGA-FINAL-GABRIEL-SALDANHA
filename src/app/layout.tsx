@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// CORREÇÃO: Os caminhos devem sair da pasta 'app' com '../'
+
 import Header from "./components/Header";
 import { useFavorites } from "./contexts/FavoritesContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FavoritesProvider>
             <Header />
 
-            {/* A classe de cor deve corresponder ao nome definido no tailwind.config.ts */}
+        
             <main className="min-h-screen ml-64 bg-gradient-to-br from-pink-50 via-purple-50 to-sky-100">
               {children}
             </main>

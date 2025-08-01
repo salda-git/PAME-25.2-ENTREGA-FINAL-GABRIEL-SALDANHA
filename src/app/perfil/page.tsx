@@ -17,15 +17,15 @@ const InfoItem = ({ label, value }: { label: string, value: string }) => (
 );
 
 export default function PerfilPage() {
-    // Dados mockados do usuário
+    // Dados rando do usuário
     const user = {
-        name: "Ana Clara",
-        email: "ana.clara@email.com",
+        name: "Luiza Melo",
+        email: "luiza.clara@email.com",
         memberSince: "Julho de 2024",
         address: "Rua Teste, 123, Bairro Teste, Cidade Teste - RJ, CEP 12345-678",
     };
 
-    // Dados mockados do histórico de pedidos
+    // Dados random do histórico de pedidos
     const orderHistory = [
         { id: "#12345", date: "25/07/2024", total: "R$ 15,50", status: "Entregue" },
         { id: "#12321", date: "15/07/2024", total: "R$ 8,00", status: "Entregue" },
@@ -59,7 +59,6 @@ export default function PerfilPage() {
                     <p className="text-gray-800">{user.address}</p>
                 </ProfileSection>
 
-                {/* Seção de Histórico de Pedidos (ocupa a largura total em telas grandes) */}
                 <div className="lg:col-span-2">
                     <ProfileSection title="Histórico de Pedidos">
                         <table className="w-full text-left">
