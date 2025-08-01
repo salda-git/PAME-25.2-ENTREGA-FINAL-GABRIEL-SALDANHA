@@ -14,7 +14,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Pirulito Diet Cereja Doce Vida",
+    name: "Pirulito Diet Cereja",
     flavor: "Cereja",
     description: "Delicioso pirulito sabor cereja sem adição de açúcares",
     price: 4.00,
