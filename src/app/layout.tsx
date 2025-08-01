@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
 
             {/* A classe de cor deve corresponder ao nome definido no tailwind.config.ts */}
-            <main className="ml-64 min-h-screen bg-[var(--cor-creme-fundo)]">
+            <main className="min-h-screen ml-64 bg-gradient-to-br from-pink-50 via-purple-50 to-sky-100">
               {children}
             </main>
 
