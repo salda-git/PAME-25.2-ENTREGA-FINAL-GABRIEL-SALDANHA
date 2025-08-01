@@ -14,7 +14,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Pirulito Cereja",
+    name: "Pirulito Diet Cereja Doce Vida",
     flavor: "Cereja",
     description: "Delicioso pirulito sabor cereja sem adição de açúcares",
     price: 4.00,
@@ -23,12 +23,10 @@ export const products: Product[] = [
     cardColor: 'bg-red-100',
 
     composition: [
-      "Dextrina (agente de volume)",
-      "Eritritol, Xilitol, Extrato de folha de estévia (edulcorantes)",
-      "Ácido cítrico (acidulante)",
-      "Ácido ascórbico (antioxidante)",
-      "Aromas naturais",
-      "Extrato de espirulina, Cúrcuma (corante)"
+      "Isomalte",
+      "Eritritol",
+      "Essência de cereja",
+      "Corante artificial vermelho Ponceau"
     ],
 
     nutritionalFacts: {
